@@ -14,7 +14,7 @@ export class Database {
                 env.db.pass,
                 {
                     dialect: 'mysql',
-                    logging: true,
+                    logging: false,
                     define: {
                         timestamps: false,
                         underscored: true,
@@ -25,5 +25,11 @@ export class Database {
         }
 
         return this.instance;
+    }
+
+    public static async connect(): Promise<void> {
+        const sequelize = this.getInstance();
+        await sequelize.authenticate();
+        console.log("DB connection OK");        
     }
 }
