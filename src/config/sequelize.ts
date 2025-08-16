@@ -13,15 +13,15 @@ export class Database {
                 env.db.user!,
                 env.db.pass,
                 {
-                    dialect: 'mysql',
+                    dialect: "mysql",
                     logging: false,
                     define: {
                         timestamps: false,
                         underscored: true,
-                        freezeTableName: true
-                    }
+                        freezeTableName: true,
+                    },
                 }
-            )
+            );
         }
 
         return this.instance;
@@ -30,6 +30,6 @@ export class Database {
     public static async connect(): Promise<void> {
         const sequelize = this.getInstance();
         await sequelize.authenticate();
-        console.log("DB connection OK");        
+        console.log("DB connection OK");
     }
 }

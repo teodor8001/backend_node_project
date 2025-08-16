@@ -7,4 +7,3 @@ export interface UserAttr {
 }
 
 export type UserCreationAttr = Omit<UserAttr, "createdAt" | "id">;
-

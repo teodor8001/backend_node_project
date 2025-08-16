@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 
 export const env = {
     db: {
@@ -7,5 +7,5 @@ export const env = {
         name: process.env.DB_NAME,
         user: process.env.DB_USER,
         pass: process.env.DB_PASS,
-    }
+    },
 };
